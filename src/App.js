@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import {commerce} from './lib/commerce'
-import {AuthProvider} from './contexts/AuthContext'
-import PrivateRoute from './components/PrivateRoute'
+
 
 import {Products, Navbar, Cart, Checkout} from './components'
 
@@ -67,7 +66,7 @@ const App = () => {
         <BrowserRouter> 
             <div>
                 <Navbar totalItems={cart.total_items} />
-                <AuthProvider>
+                
                     <Switch>
                     
                         <Route exact path='/' >
@@ -90,7 +89,7 @@ const App = () => {
                         </Route>
                         
                     </Switch>
-                </AuthProvider>
+              
             </div>
         </BrowserRouter>
     )
